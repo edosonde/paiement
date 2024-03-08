@@ -53,11 +53,10 @@
                                         <td>{{fr.codeFrais}}</td>
                                         <td>{{fr.libelle}}</td>
                                         <td>
-                                            <form action="{% url 'deleteFrais' fr.codeFrais %}" method="post" style="display:inline;">
-                                                {% csrf_token %}
-                                                <boutton type="submit" onclick="return confirm('Etes-vous sur de vouloir supprimer?')">s</boutton>
+                    
+                                            
+                                                <a href="{% url 'deleteFrais' fr.codeFrais %}" onclick="return confirm('Etes-vous sur de vouloir supprimer?')">s</a>
 
-                                            </form>
                                         </td>
                                     </tr>
                                     {% endfor %}

@@ -20,7 +20,7 @@ from app_paiement.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-   #path('',index,name="index"),
+    #path('',index,name="index"),
     path('frais/',ffrais,name="ffrais"),
     path('',dash,name="dash"),
     path('deleteFrais/<str:id>/',deleteFrais, name="deleteFrais"),

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from app_paiement.models.frais import *
+from django.shortcuts import redirect
 
 # create you views here.
 
@@ -21,9 +22,8 @@ def dash(request):
     return render(request,'dashboard.html')
 
 def deleteFrais(request,id):
-    if request.methode == 'POST':
-        fr = Frais.objects.get(pk=id)
-        Fr.delete()
-        return HttpResponseRedirect('/frais/')
-    else:
-        return HttpResponseRedirect('/frais/')
+  
+    fr = Frais.objects.get(pk=id)
+    fr.delete()
+      
+    return redirect('/frais/')
