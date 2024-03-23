@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="dashboard-wrapper">
+    <div class="container-fluid  dashboard-content">
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="card">
+            <h5 class="card-header">FORMULAIRE D'AJOUT CLASSE</h5>
+            <div class="card-body border-top">
+                <form method="post" action="{% url 'addclasse' %}">
+                     {% csrf_token %}
+                    <div class="form-group">  
+                        <label for="validationCustom01"> CODE CLASSE</label>
+                        <input type="text" class="form-control" name="codeclass"  id="validationCustom01" placeholder="CODE CLASSE" required>
+                    </div>
+                    <div class="form-group">
+                       
+                        <label for="validationCustom01">LIBELLE CLASSE</label>
+                        <input type="text" class="form-control"  name="libelleclass" id="validationCustom01" placeholder="LIBELLE CLASSE" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" style="width: 20%;color:white;">Enregistrer</boutton>
+                
+                </form>  
+                
+                
+            </div>
+           <p style="margin-left:20px"> {{message}}</p>
+        </div>
+       
+    </div>
+</div>
+<div>
+</div>
+{% endblock content %}

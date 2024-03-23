@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app_paiement.views import *
+from app_paiement.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +25,12 @@ urlpatterns = [
     path('frais/',ffrais,name="ffrais"),
     path('',dash,name="dash"),
     path('deleteFrais/<str:id>/',deleteFrais, name="deleteFrais"),
+    path('classe/',fclasse,name="fclasse"),
+    path('ajouterFrais/',ajouterFrais,name="ajouterFrais"),
+    path('ajouterclasse/',ajouterclasse,name="ajouterclasse"),
+    path('addfrais/',addfrais,name="addfrais"),
+     path('addclasse/',addclasse,name="addclasse"),
+    path('deleteclasse/<str:id>/',deleteclasse, name="deleteclasse"),
+    path('eleve/',feleve,name="feleve"),
       
 ]

@@ -8,14 +8,24 @@
         <!-- pageheader -->
         <!-- ============================================================== -->
 
-        <a type="submit" href="{% url 'ajouterFrais' %}"class="btn btn-primary btn-lg btn-block" style="width: 20%;color:white;">Ajouter un frais</a>
+
+        <a type="submit" href="{% url 'ajouterclasse' %}"class="btn btn-primary btn-lg btn-block" style="width: 20%;color:white;">Ajout classe</a>
         <br><br>
-        <div class="row"> 
+
+        <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
-                    <h2 class="pageheader-title">Gestion de frais</h2>
+                    <h2 class="pageheader-title">Gestion de classe</h2>
                     <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
-                     
+                    <div class="page-breadcrumb">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Tables</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Data Tables</li>
+                            </ol>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
@@ -28,7 +38,7 @@
             <!-- ============================================================== -->
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="card">
-                    <h5 class="card-header">Gestion de frais</h5>
+                    <h5 class="card-header">Gestion de classe</h5>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered first">
@@ -43,25 +53,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for fr in frais %}
+                                    {% for fc in classe %}
                                     <tr>
                                         <td>{{forloop.counter}}</td>
-                                        <td>{{fr.codeFrais}}</td>
-                                        <td>{{fr.libelle}}</td>
+                                        <td>{{fc.codeclass}}</td>
+                                        <td>{{fc.libelleclass}}</td>
                                         <td>
                     
                                             
-                                                <a href="{% url 'deleteFrais' fr.codeFrais %}" onclick="return confirm('Etes-vous sur de vouloir supprimer?')">s</a>
+                                                <a href="{% url 'deleteclasse' fc.codeclass %}" onclick="return confirm('Etes-vous sur de vouloir supprimer?')">s</a>
 
                                         </td>
                                     </tr>
                                     {% endfor %}
                                     <tr>
                                         <td>Nombre total</td>
-                                        <td>{{nbrf}}</td>
+                                        <td>{{nbrc}}</td>
                                         
                                         
-                                    </tr> 
+                                    </tr>
 
                                 </tfoot>
                             </table>
