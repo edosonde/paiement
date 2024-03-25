@@ -38,15 +38,18 @@
                 </tr>
             </thead>
             <tbody>
-                {% for el in Eleve %}
+                {% for el in  eleve %}
                 <tr>
-                    
+                    <td>{{forloop.counter}}</td>
                     <td>{{el.matricule}}</td>
                     <td>{{el.noms}}</td>
                     <td>{{el.adresse}}</td>
                     <td>{{el.tel}}</td>
                     <td>{{el.codeclass}}</td>
-                    <td>s m</td>
+                    <td>
+
+                        <a href="{% url 'deleteeleve' el.matricule %}" onclick="return confirm('Etes-vous sur de vouloir supprimer?')">s</a> 
+                    </td>
 
                     <td>
 
@@ -57,7 +60,7 @@
             <tfoot>
                 <tr>
                     <th>Nombre total</th>
-                    <th>{{eleve}}</th>
+                    <th>{{elev}}</th>
                 </tr>
             </tfoot>
         </table>

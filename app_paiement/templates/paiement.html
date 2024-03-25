@@ -43,11 +43,14 @@
                     <tbody>
                     {% for pm in paiement %}
                         <tr>
+                            <td>{{forloop.counter}}</td>
                             <td>{{pm.codeFrais}}</td>
                             <td>{{pm.eleve}}</td>
                             <td>{{pm.datepaie}}</td>
                             <td>{{pm.montant}}</td>
-                            <td>m s</td>
+                            <td>
+                                <a href="{% url 'deletepaiement' pm.codeFrais %}" onclick="return confirm('Etes-vous sur de vouloir supprimer?')">s</a> 
+                            </td>
                         </tr>
 
                      {% endfor %}
@@ -55,7 +58,7 @@
                     <tfoot>
                         <tr>
                             <th>Nombre total</th>
-                            <th>{{paiement}}</th>
+                            <th>{{paiemen}}</th>
                         </tr>
                     </tfoot>
                 </table>

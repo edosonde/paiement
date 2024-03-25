@@ -113,22 +113,43 @@ def addclasse(request):
 
 def feleve(request):
     eleve = Eleve.objects.all()
-    eleve = Eleve.objects.all().count()
+    elev = Eleve.objects.all().count()
 
-    ctx ={ "eleve": eleve
-         
-    }
+    ctx ={ "eleve": eleve,
+           "elev":elev
+
+          }
 
     return render(request,'eleve.html',ctx)
 
 def fpaiement(request):
     paiement = Paiement.objects.all()
-    paiement = Paiement.objects.all().count() 
+    paiemen = Paiement.objects.all().count() 
 
-    ctx = {"paiement": paiement
+    ctx = {
+        "paiement": paiement,
+        "paiemen": paiemen
     #"nbrp": len(paiement)
    }
 
     return render(request,'paiement.html',ctx)
+
+def deleteeleve(request,id):
+  
+    el = Eleve.objects.get(pk=id)
+    el.delete()
+      
+    return redirect('/classe/')
+
+
+def deletepaiement(request,id):
+  
+    pm = Paiement.objects.get(pk=id)
+    pm.delete()
+      
+    return redirect('/paiement/')
+  
+    
+    
 
 

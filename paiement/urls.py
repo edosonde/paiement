@@ -35,6 +35,8 @@ urlpatterns = [
     path('deleteclasse/<str:id>/',deleteclasse, name="deleteclasse"),
     path('eleve/',feleve,name="feleve"),
     path('paiement/',fpaiement,name="fpaiement"),
+    path('deleteeleve/<str:id>/',deleteeleve, name="deleteeleve"),
+    path('deletepaiement/<str:id>/',deletepaiement, name="deletepaiement"),
     
 
    
