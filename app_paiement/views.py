@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from app_paiement.models.frais import *
 from django.shortcuts import redirect
-from app_paiement.models.eleve import *
-
+from app_paiement.models.classe import *
+from app_paiement.models.eleve import Eleve
+from app_paiement.models.paiement import Paiement
+ 
 # create you views here.
 
 def index(request):
@@ -110,4 +112,23 @@ def addclasse(request):
 
 
 def feleve(request):
-    return render(request,'eleve.html')
+    eleve = Eleve.objects.all()
+    eleve = Eleve.objects.all().count()
+
+    ctx ={ "eleve": eleve
+         
+    }
+
+    return render(request,'eleve.html',ctx)
+
+def fpaiement(request):
+    paiement = Paiement.objects.all()
+    paiement = Paiement.objects.all().count() 
+
+    ctx = {"paiement": paiement
+    #"nbrp": len(paiement)
+   }
+
+    return render(request,'paiement.html',ctx)
+
+

@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path
 from app_paiement.views import *
 from app_paiement.views import *
+from app_paiement.views import Eleve
+from app_paiement.views import Paiement
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,8 +31,13 @@ urlpatterns = [
     path('ajouterFrais/',ajouterFrais,name="ajouterFrais"),
     path('ajouterclasse/',ajouterclasse,name="ajouterclasse"),
     path('addfrais/',addfrais,name="addfrais"),
-     path('addclasse/',addclasse,name="addclasse"),
+    path('addclasse/',addclasse,name="addclasse"),
     path('deleteclasse/<str:id>/',deleteclasse, name="deleteclasse"),
     path('eleve/',feleve,name="feleve"),
+    path('paiement/',fpaiement,name="fpaiement"),
+    
+
+   
+   
       
 ]
